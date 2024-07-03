@@ -13,7 +13,7 @@ function speedDetector(speed) {
     if (points >= 12) {
         console.log('License suspended');
     } else {
-        console.log(Points: ${points});
+        console.log('Points: ${points}');
     }
 }
 
