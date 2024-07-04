@@ -1,21 +1,24 @@
 // speedDetector.js
-
-function speedDetector(speed) {
+//Speed limit is const so use of Const is done
+//let is used on points demerits coz it's a variable that can change
+function calculatePoints(speed) {
     const speedLimit = 70;
-    const kmPerPoint = 5;
+    let Points = 0;
 
-    if (speed < speedLimit + kmPerPoint) {
-        console.log('Ok');
-        return;
+    if (speed <= speedLimit) {
+        console.log("Ok");
+    } else {
+        Points = Math.ceil((speed - speedLimit) / 5);
+        console.log(`Points: ${Points}`);
     }
 
-    const points = Math.floor((speed - speedLimit) / kmPerPoint);
-    if (points >= 12) {
-        console.log('License suspended');
-    } else {
-        console.log('Points: ${points}');
+    if (Points > 12) {
+        console.log("License suspended");
     }
 }
+
+let speed = 500;
+calculatePoints(speed);
 
 // Uncomment the line below to run the function
 // speedDetector(80);
